@@ -20,6 +20,15 @@ Good luck!
 6. In your terminal, run `openssl rand -base64 32` to generate a random secret; copy this value and set `WORKOS_COOKIE_PASSWORD` in `.env`
 7. Run the app with `npm run dev`
 
+> NOTE: You may encounter the following error when running `npm run dev`:
+>
+> ```
+> TypeError: Cannot read properties of null (reading 'useContext')
+> ```
+>
+> This is a bug in React Router that typically occurs on the first run. You can
+> refresh the page and the error will go away.
+
 ## Building for Production
 
 Create a production build:
