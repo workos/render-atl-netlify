@@ -14,7 +14,7 @@ Good luck!
 
 1. Ensure you are using Node 22 or higher. The project will be deployed to Netlify using Node 22, so we recommend using the same version in development.
 2. Clone this repo and run `npm install`
-3. Copy `.env.example` to a new file named `.env`
+3. Run `npm run copy-env` to generate a `.env` file based on `.env.example`
 4. Create a [new WorkOS account](https://signin.workos.com/sign-up). If you already have an account you'd like to use you can [sign-in](https://signin.workos.com).
 5. Go to your [WorkOS dashboard](https://dashboard.workos.com/)
 6. Under the Quick start section, copy the `WORKOS_CLIENT_ID` and `WORKOS_API_KEY` values and update the corresponding values in `.env`
