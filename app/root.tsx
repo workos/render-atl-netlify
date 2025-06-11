@@ -1,76 +1,93 @@
+// Import the base CSS styles for the radix-ui components.
+import "@radix-ui/themes/styles.css";
+import { Theme, Card, Container, Flex, Button, Box } from "@radix-ui/themes";
 import {
-  isRouteErrorResponse,
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
+	Links,
+	Link,
+	Meta,
+	Outlet,
+	Scripts,
+	ScrollRestoration,
+	useRouteLoaderData,
+	data,
 } from "react-router";
-
+import Footer from "./components/footer";
+import SignInButton from "./components/sign-in-button";
 import type { Route } from "./+types/root";
-import stylesheet from "./app.css?url";
 
-export const links: Route.LinksFunction = () => [
-  { rel: "preconnect", href: "https://fonts.googleapis.com" },
-  {
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
-    crossOrigin: "anonymous",
-  },
-  {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
-  },
-  { rel: "stylesheet", href: stylesheet },
-];
+export const links: Route.LinksFunction = () => [];
 
-export function Layout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <Meta />
-        <Links />
-      </head>
-      <body>
-        {children}
-        <ScrollRestoration />
-        <Scripts />
-      </body>
-    </html>
-  );
+export function loader(_: Route.LoaderArgs) {
+	// Called when the form in SignInButton is submitted
+	const user = {
+		firstName: "John",
+		lastName: "Doe",
+		email: "john.doe@example.com",
+		id: "123",
+	};
+	return data({ user });
+}
+
+export async function action(_: Route.ActionArgs) {
+	// Called when the form in SignInButton is submitted
+	return data({ user: null });
+}
+
+export function useRootLoaderData() {
+	return useRouteLoaderData<typeof loader>("root");
 }
 
 export default function App() {
-  return <Outlet />;
-}
+	return (
+		<html lang="en">
+			<head>
+				<meta charSet="utf-8" />
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<Meta />
+				<Links />
+			</head>
+			<body>
+				<ScrollRestoration />
+				<Scripts />
+				<Theme
+					accentColor="iris"
+					panelBackground="solid"
+					style={{ backgroundColor: "var(--gray-1)" }}
+				>
+					<Container style={{ backgroundColor: "var(--gray-1)" }}>
+						<Flex direction="column" gap="5" p="5" height="100vh">
+							<Box asChild flexGrow="1">
+								<Card size="4">
+									<Flex direction="column" height="100%">
+										<Flex asChild justify="between">
+											<header>
+												<Flex gap="4">
+													<Button asChild variant="soft">
+														<Link to="/">Home</Link>
+													</Button>
 
-export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
-  let message = "Oops!";
-  let details = "An unexpected error occurred.";
-  let stack: string | undefined;
+													<Button asChild variant="soft">
+														<Link to="/account">Account</Link>
+													</Button>
+												</Flex>
 
-  if (isRouteErrorResponse(error)) {
-    message = error.status === 404 ? "404" : "Error";
-    details =
-      error.status === 404
-        ? "The requested page could not be found."
-        : error.statusText || details;
-  } else if (import.meta.env.DEV && error && error instanceof Error) {
-    details = error.message;
-    stack = error.stack;
-  }
+												<SignInButton />
+											</header>
+										</Flex>
 
-  return (
-    <main className="pt-16 p-4 container mx-auto">
-      <h1>{message}</h1>
-      <p>{details}</p>
-      {stack && (
-        <pre className="w-full p-4 overflow-x-auto">
-          <code>{stack}</code>
-        </pre>
-      )}
-    </main>
-  );
+										<Flex flexGrow="1" align="center" justify="center">
+											<main>
+												<Outlet />
+											</main>
+										</Flex>
+									</Flex>
+								</Card>
+							</Box>
+							<Footer />
+						</Flex>
+					</Container>
+				</Theme>
+			</body>
+		</html>
+	);
 }
