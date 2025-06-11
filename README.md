@@ -1,38 +1,24 @@
-# React Router Netlify Template
+# Render ATL: Netlify + WorkOS Code Challenge 🚀
 
-A modern, production-ready template for building full-stack React applications using React Router,
-deployed to Netlify.
+The challenge, should you choose to accept:
 
-## Features
+Use AuthKit to add authentication to this full-stack React Router application. Your app should allow users to register for a new account and log in using the following methods:
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
-- 💻 Configured for deployment to Netlify
+- Email + password
+- Google OAuth
+- GitHub OAuth
 
-## Getting Started
+Good luck!
 
-### Installation
+## Initial set-up
 
-Install the dependencies:
-
-```bash
-npm install
-```
-
-### Development
-
-Start the development server with HMR:
-
-```bash
-npm run dev
-```
-
-Your application will be available at `http://localhost:5173`.
+1. Clone this repo and run `npm install`
+2. Copy `.env.example` to a new file named `.env`
+3. Create a [new WorkOS account](https://signin.workos.com/sign-up). If you already have an account you'd like to use you can [sign-in](https://signin.workos.com).
+4. Go to your [WorkOS dashboard](https://dashboard.workos.com/)
+5. Under the Quick start section, copy the `WORKOS_CLIENT_ID` and `WORKOS_API_KEY` values and update the corresponding values in `.env`
+6. In your terminal, run `openssl rand -base64 32` to generate a random secret; copy this value and set `WORKOS_COOKIE_PASSWORD` in `.env`
+7. Run the app with `npm run dev`
 
 ## Building for Production
 
@@ -56,19 +42,13 @@ npm run build
 
 ## Deployment
 
-This template is preconfigured for deployment to Netlify.
+This template is pre-configured for deployment to Netlify.
 
 Follow <https://docs.netlify.com/welcome/add-new-site/> to add this project as a site
 in your Netlify account.
 
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
 ## See also
 
-[Guide: how to deploy a React Router 7 site to Netlify](https://developers.netlify.com/guides/how-to-deploy-a-react-router-7-site-to-netlify/)
-
----
-
-Built with ❤️ using React Router.
+- [`@workos-inc/authkit-react-router` docs](https://www.npmjs.com/package/@workos-inc/authkit-react-router)
+- [WorkOS User Management docs](https://workos.com/docs/user-management/overview)
+- [Deploy a React Router 7 site to Netlify](https://developers.netlify.com/guides/how-to-deploy-a-react-router-7-site-to-netlify/)
