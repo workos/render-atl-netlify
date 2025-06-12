@@ -1,0 +1,34 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+---
+description: React Router 7 conventions and best practices
+globs: ["app/routes/**/*", "app/root.tsx", "app/routes.ts", "react-router.config.ts"]
+alwaysApply: false
+---
+
+# React Router 7 Conventions
+
+## File-Based Routing
+- Add all route module files to `app/routes/`
+- Use kebab-case for route files (e.g., `user-profile.tsx`)
+- Make sure new route files are added to `routes.ts` using React Router's APIs for defining routes
+
+## Data Loading & Actions
+- Use proper loader and action patterns for data fetching
+- Export loaders and actions as named exports
+- Handle loading states and errors appropriately
+
+## Route Components
+- Use default exports for route components
+- Implement proper error boundaries
+- Use the Meta export for route metadata
+- Handle edge cases like empty states
+
+## Error Handling
+- Use React Router's error handling patterns
+- Implement ErrorBoundary components
+- Provide meaningful error messages
+- Handle network errors gracefully

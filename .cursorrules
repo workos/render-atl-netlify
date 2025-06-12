@@ -1,0 +1,124 @@
+# Cursor Rules for React Router 7 + TypeScript Project
+
+## Project Overview
+
+This is a React Router 7 application with TypeScript, Vite, Radix UI, and WorkOS AuthKit integration, deployed on Netlify.
+
+## Code Style & Formatting
+
+- Use TypeScript for all new files
+- Follow the existing ESLint configuration in `eslint.config.js`
+- Use Prettier for code formatting (settings in project)
+- Use ES2022+ features and modern JavaScript/TypeScript syntax
+- Prefer `const` over `let`, avoid `var`
+- Use arrow functions for callbacks and short functions
+- Use template literals instead of string concatenation
+
+## File Organization
+
+- Main application code goes in the `app/` directory
+- Components go in `app/components/`
+- Routes go in `app/routes/`
+- Use the `~/*` path alias for imports from the app directory (configured in tsconfig.json)
+- Follow React Router 7 file-based routing conventions
+
+## React & Component Guidelines
+
+- Use React 19 features and best practices
+- Prefer function components over class components
+- Use hooks for state management and side effects
+- Follow the Radix UI patterns for UI components
+- Keep components small and focused on a single responsibility
+- Use proper TypeScript interfaces for props
+
+## Import Organization
+
+- Group imports in this order:
+  1. React and React-related imports
+  2. Third-party library imports
+  3. Internal app imports (using ~/ alias)
+  4. Relative imports
+- Use named imports when possible
+- Avoid default exports except for route components
+
+## TypeScript Best Practices
+
+- Enable strict mode (already configured)
+- Use proper typing for all props, state, and function parameters
+- Prefer interfaces over types for object shapes
+- Use generic types appropriately
+- Avoid `any` type - use `unknown` if truly needed
+
+## React Router 7 Specific
+
+- Follow React Router 7 conventions for route files
+- Use proper loader and action patterns for data fetching
+- Implement proper error boundaries and error handling
+- Use the Meta export for route metadata
+- Follow the file-based routing structure in `app/routes/`
+
+## WorkOS AuthKit Integration
+
+- Follow WorkOS AuthKit React Router patterns
+- Handle authentication state properly
+- Use proper error handling for auth flows
+- Follow security best practices for auth data
+
+## Performance & Optimization
+
+- Use React.memo() for expensive renders
+- Implement proper loading states
+- Use Suspense boundaries where appropriate
+- Optimize bundle size by avoiding unnecessary imports
+- Use Vite's code splitting capabilities
+
+## Error Handling
+
+- Implement proper error boundaries
+- Use try-catch blocks for async operations
+- Provide meaningful error messages
+- Handle network errors gracefully
+- Use React Router's error handling patterns
+
+## Accessibility
+
+- Include proper ARIA attributes
+- Ensure keyboard navigation works
+- Use semantic HTML elements
+- Follow Radix UI accessibility patterns
+- Test with screen readers when possible
+
+## Environment & Configuration
+
+- Use environment variables for configuration
+- Keep sensitive data in environment variables
+- Follow the Netlify deployment patterns
+- Use the provided scripts in package.json
+
+## Code Comments
+
+- Write clear, concise comments for complex logic
+- Document component props with JSDoc when helpful
+- Explain business logic and non-obvious code
+- Keep comments up to date with code changes
+
+## Testing Considerations
+
+- Write testable code with clear separation of concerns
+- Mock external dependencies properly
+- Test user interactions and edge cases
+- Consider accessibility in tests
+
+## File Naming
+
+- Use PascalCase for component files (e.g., `UserProfile.tsx`)
+- Use camelCase for utility files (e.g., `authHelpers.ts`)
+- Use kebab-case for route files following React Router conventions
+- Keep file names descriptive and consistent
+
+## Dependencies
+
+- Prefer the existing dependencies over adding new ones
+- Check package.json before suggesting new packages
+- Use the specific versions already configured
+- Consider bundle size impact of new dependencies

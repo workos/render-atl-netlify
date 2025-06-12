@@ -1,0 +1,24 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# File Organization & Naming
+
+## Directory Structure
+- Main application code goes in the `app/` directory
+- Routes go in `app/routes/`
+
+## File Naming Conventions
+- Use kebab-case for all files (e.g., `user-profile.tsx`)
+- Keep file names descriptive and consistent
+- Use `.tsx` for files containing JSX, `.ts` for pure TypeScript
+- Make sure new route files are added to `routes.ts` using React Router's APIs for defining routes
+
+## Import Path Organization
+- Use the `~/*` alias for app directory imports
+- Keep import statements organized and clean
+- Remove unused imports
+
+## Code Organization
+- Keep related files close together

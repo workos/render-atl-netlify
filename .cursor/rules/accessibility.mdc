@@ -1,0 +1,41 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+---
+description: Accessibility guidelines and best practices
+globs: ["app/components/**/*", "app/routes/**/*"]
+alwaysApply: false
+---
+
+# Accessibility Guidelines
+
+## ARIA and Semantic HTML
+- Include proper ARIA attributes where needed
+- Use semantic HTML elements (header, main, section, etc.)
+- Provide proper labels for form inputs
+- Use heading hierarchy correctly (h1, h2, h3, etc.)
+
+## Keyboard Navigation
+- Ensure all interactive elements are keyboard accessible
+- Implement proper focus management
+- Use proper tab order for form elements
+- Handle keyboard events appropriately
+
+## Radix UI Integration
+- Follow Radix UI accessibility patterns
+- Use Radix components which have built-in accessibility
+- Leverage Radix's keyboard navigation features
+- Follow Radix documentation for proper usage
+
+## Visual Accessibility
+- Ensure sufficient color contrast
+- Provide alternative text for images
+- Use focus indicators for interactive elements
+
+## Screen Reader Support
+- Test with screen readers when possible
+- Use proper ARIA labels and descriptions
+- Implement skip links for navigation
+- Provide text alternatives for visual content
