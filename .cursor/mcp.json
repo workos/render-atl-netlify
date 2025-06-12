@@ -1,0 +1,8 @@
+{
+	"mcpServers": {
+		"workos": {
+			"command": "npx",
+			"args": ["@workos/mcp-docs-server"]
+		}
+	}
+}

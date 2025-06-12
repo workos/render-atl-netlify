@@ -60,5 +60,6 @@ in your Netlify account.
 ## See also
 
 - [`@workos-inc/authkit-react-router` docs](https://www.npmjs.com/package/@workos-inc/authkit-react-router)
+- [`@workos/mcp-docs-server` docs](https://www.npmjs.com/package/@workos/mcp-docs-server)
 - [WorkOS User Management docs](https://workos.com/docs/user-management/overview)
 - [Deploy a React Router 7 site to Netlify](https://developers.netlify.com/guides/how-to-deploy-a-react-router-7-site-to-netlify/)
